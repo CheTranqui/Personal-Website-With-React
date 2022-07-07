@@ -1,0 +1,236 @@
+:root {
+    --color-primaryBackground: #fff;
+    --color-secondaryBackground: #eee;
+    --color-primaryTitle: #38a2c2;
+    --color-primaryTitleShadow: rgba(56, 162, 194, 1);
+    --color-primaryText: #123;
+    --color-fadedText: #666;
+    --color-links: #01afa7;
+    --color-linksShadow: rgba(1, 175, 167, 0.8);
+    --color-carouselButtons: rgba(200,200,200,0.6);
+    --color-carouselButtonText: darkgray;
+    --ff-primaryFont: 'Times New Roman';
+    --ff-accentFont: 'Palatino Linotype';
+}
+
+@font-face { font-family: 'MartinHandwriting'; src: url('../../Martinhand2.ttf');}
+
+    #navContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: var(--color-primaryBackground);
+        width: 100%;
+        height: auto;
+        padding-top: 0.65rem;
+        padding-bottom: 0.75rem;
+        margin: 0;
+    }
+
+    .navBar {
+        position: relative;
+        display: flex;
+        width: auto;
+        margin: 0;
+    }
+
+    .navLink {
+        display: flex;
+        flex-wrap: nowrap;
+        color: var(--color-primaryTitle);
+        font-family: var(--ff-accentFont);
+        height: auto;
+        margin: 0;
+        background-size: 100% 200%;
+        background-image: linear-gradient(180deg, var(--color-primaryBackground) 50%, var(--color-primaryTitle) 50%);
+        border: 0;
+        outline-color: var(--color-links);
+        font-size: 1.0rem;
+        cursor: pointer;
+        transition: background-position 0.5s;
+    }
+
+    .navLink:hover,
+    .activeNav {
+        font-size: 1.0rem;
+        color: #fff;
+        background-position: 0 100%;
+    }
+
+    .navMenuItem {
+        padding: 0;
+    }
+
+    .emailMe {
+        padding-right: 0.3rem;
+        padding-left: 0.3rem;
+        text-decoration: none;
+    }
+
+    #copyNotification{
+        float: none;
+        position: absolute;
+        top: 3.25rem;
+        display: none;
+        background: var(--color-secondaryBackground);
+        font-size: small;
+        text-align: center;
+        /* text-wrap: normal; */
+        word-wrap: normal;
+        z-index: 2;
+    }
+
+    .modeContainer {
+        position: absolute;
+        top: 0.25rem;
+        right: 0;
+        padding-right: 5%;
+        width: 90%;
+        margin: auto;
+    }
+
+    .modeLabel {
+        position: relative;
+        float: right;
+        top: 0;
+        right: 2.4rem;
+        height: 1rem;
+        width: 4.5rem;
+        font-size: 0.75rem;
+        color: var(--color-primaryTitle);
+    }
+
+    .modeLabel input {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        height: 0.75rem;
+        width: 2rem;
+        position: absolute;
+        cursor: pointer;
+        top: 0.18rem;
+        right: -2rem;
+        background-color: var(--color-carouselButtons);
+        transition: .3s;
+        border-radius: 0.4rem;
+    }
+
+    .slider::before {
+        position: absolute;
+        content: "";
+        height: 0.5rem;
+        width: 0.5rem;
+        left: 4px;
+        bottom: 2px;
+        background-color: var(--color-fadedText);
+        transition: .3s;
+        border-radius: 40%;
+    }
+
+    .modeLabel input:checked + .slider {
+        background-color: var(--color-primaryTitle);
+    }
+
+    .modeLabel input:focus + .slider {
+        box-shadow: 0 0 1px var(--color-primaryTitle);
+    }
+
+    .modeLabel input:checked + .slider:before {
+        background-color: var(--color-secondaryBackground);
+        transform: translateX(1rem);
+    }
+
+    /*==================================
+        NavBar: Social Media Dropdown
+    ====================================*/
+    .navList {
+        list-style-type: none;
+        padding-left: 0.2rem;
+        margin: 0 0 0 0;
+    }
+
+    #socialMediaDisplay {
+        margin: 0 0.5rem 0 0.5rem;
+    }
+
+    .socialMediaDropdownBackground {
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        height: auto;
+        width: 90%;
+        max-width: 7rem;
+        padding: 0.2rem 2rem 0.2rem 0;
+        border: 2px solid var(--color-links);
+        background-color: var(--color-secondaryBackground);
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
+        z-index: 1;
+    }
+
+    .socialMediaDropdownItem {
+        margin: 0.5rem 0 0.5rem 0;
+        display: block;
+        background-color: var(--color-secondaryBackground);
+    }
+
+    .socialMediaDropdownImage {
+        max-width: 45%;
+        height: auto;
+    }
+
+    .socialMediaDropdownLink {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--color-primaryText);
+        background-color: var(--color-secondaryBackground);
+    }
+
+    .socialMediaDropdownLink:hover, .socialMediaDropdownLink:focus {
+        width: 110%;
+        font-size: 1.1rem;
+    }
+
+    .socialMediaDropdownText {
+        margin-left: 0.35rem;
+        display: inline-block;
+    }
+
+    .show {
+        display: inline-block;
+        width: 90%;
+    }
+
+    #pageNavButton{
+        display: none;
+        font-size: 2.5rem;
+        width: 1.7ch;
+        transform: rotate(-90deg) scale(1);
+        position: fixed;
+        bottom: 3%;
+        right: 7.5%;
+        z-index: 2;
+    }
+
+
+    /*==================================
+        NavBar: Right-side Nav Menu
+    ====================================*/
+    #navMenu {
+        align-content: flex-end;
+    }
+
+    #navMenuList {
+        width: 100%;
+    }
+
+    .navMenuItem {
+        float: right;
+        display: block;
+        margin: 0 0.25rem 0 0.25rem;
+    }

@@ -1,0 +1,232 @@
+﻿/*
+    Author: Chaz Peterson
+    Alias:  CheTranqui
+*/
+
+    /*==================================
+            Primary Document Styles
+    ====================================*/
+
+:root {
+    --color-primaryBackground: #fff;
+    --color-secondaryBackground: #eee;
+    --color-primaryTitle: #38a2c2;
+    --color-primaryTitleShadow: rgba(56, 162, 194, 1);
+    --color-primaryText: #123;
+    --color-fadedText: #666;
+    --color-links: #01afa7;
+    --color-linksShadow: rgba(1, 175, 167, 0.8);
+    --color-carouselButtons: rgba(200,200,200,0.6);
+    --color-carouselButtonText: darkgray;
+    --ff-primaryFont: 'Times New Roman';
+    --ff-accentFont: 'Palatino Linotype';
+}
+
+@font-face { font-family: 'MartinHandwriting'; src: url('../Martinhand2.ttf');}
+
+    ul {
+        margin-top: 0;
+    }
+
+    header {
+        font-family: var(--ff-accentFont);
+        background-color: var(--color-secondaryBackground);
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: var(--color-primaryTitle);
+        font-family: var(--ff-accentFont);
+        margin: 1.5rem 0.5rem 1rem 0.5rem;
+    }
+
+    h1 {
+        font-size: 2.7rem;
+        text-shadow: 2px 0 var(--color-buttonBackground);
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-shadow: 0.5px 1.5px black;
+    }
+
+    body {
+        width: 90%;
+        margin: 1rem auto 2rem auto;
+        background-color: var(--color-primaryBackground);
+        color: var(--color-primaryText);
+        font-size: 1.5rem;
+        font-family: var(--ff-primaryFont);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.05rem;
+        background-color: var(--color-secondaryBackground);
+    }
+
+    article {
+        text-align: center;
+        height: auto;
+        width: 95%;
+        margin: auto;
+        padding: 1rem 0 1rem 0;
+    }
+
+    #introductionArticle,
+    #primaryProjectsArticle{
+        display: block;
+        align-content: center;
+    }
+
+    a {
+        color: var(--color-links);
+        font-size: 1.3rem;
+        transition: font-size, 0.2s ease-in-out;
+    }
+
+    a:hover, a:focus {
+        font-size: 1.5rem;
+    }
+
+    #scrollToTopButton{
+        display: none;
+        font-size: 2rem;
+        width: 1.7ch;
+        height: 2.7ch;
+        transform: rotate(-90deg) scale(1);
+        position: fixed;
+        top: 92%;
+        right: 7.25%;
+        z-index: 2;            
+        }
+
+    /*==================================
+            Introduction Styles
+    ====================================*/
+
+    .introductionArticle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+
+    #introductionTextSection {
+        text-align: center;
+    }
+
+    .introductionText {
+        margin: 0.5rem 0 0.5rem 0;
+    }
+
+    
+
+    .hidden {
+        display: none;
+    }
+
+
+    /*=======================================
+        Projects.html page from 250px to 450px+
+    =========================================*/
+
+    .inlineLink {
+        color: var(--color-inlineLinks);
+        text-decoration: none;
+    }
+
+@media only screen and (min-width: 300px) {
+    .navLink {
+        font-size: 1.1rem;
+    }
+
+    .navLink:hover, .navLink:focus {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (min-width: 450px){
+
+    .navList {
+        padding-left: 0.5rem;
+    }
+
+    .navLink {
+        font-size: 1.3rem;
+    }
+
+    .navLink:hover, .navLink:focus {
+        font-size: 1.3rem;
+    }
+}
+
+    /*==================================
+        Primary Document Styles - Desktop
+    Everything here is for over 795 pixels wide
+    ====================================*/
+    @media only screen and (min-width: 795px) {
+
+        header {
+            font-size: 1.5rem;
+        }
+
+        body {
+            font-size: 1.2rem;
+        }
+
+        a {
+            font-size: 1rem;
+        }
+
+        a:hover, a:focus {
+            font-size: 1.1rem;
+        }
+
+        #scrollToTopButton{
+            font-size: 2.25rem;
+            right: 6%;
+        }
+
+    /*==================================
+        Introduction Styles - Desktop
+    ====================================*/
+        .introductionArticle {
+            width: 80%;
+            height: auto;
+            margin: 0 10% 0 10%;
+        }
+    }
+
+    /*==================================
+        MartianTribuneStories & footer
+    ====================================*/
+    .afterThought {
+        text-align: left;
+        font-size: 1rem;
+        text-shadow: none;
+        color: var(--color-fadedText);
+    }
+
+    .CSSValidator a img {
+        max-height: 1.3rem;
+        max-width: 4rem;
+    }
+
+    /*==================================
+        Floating CheTranqui
+    ====================================*/
+    .floatingChe{
+        position: absolute;
+        font-family: 'MartinHandwriting', Fallback, 'Comic Sans MS';
+        font-size: 1rem;
+        transform: rotate(-30deg);
+        color: var(--color-carouselButtons);
+        cursor: pointer;
+        transition: all 0.75s;
+        z-index: 3;
+    }

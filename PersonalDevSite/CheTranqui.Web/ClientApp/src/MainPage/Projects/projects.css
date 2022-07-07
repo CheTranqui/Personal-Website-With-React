@@ -1,0 +1,230 @@
+/*=======================================
+        Projects.html page from 250px to 450px+
+    =========================================*/
+
+    .inlineLink {
+        color: var(--color-inlineLinks);
+        text-decoration: none;
+    }
+
+    .projectsMain {
+        height: 100%;
+    }
+
+    .carousel {
+        position: relative;
+        height: auto;
+        width: 95%;
+        max-width: 800px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .carouselTrackContainer {
+        position: relative;
+        height: 100%;
+    }
+
+    .carouselTrack {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .carouselSlide {
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .carouselSideButton {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 4.8rem;
+        padding: 0 0 0.3rem 0;
+        border: 0;
+        height: var(--height-imageHeight);
+        width: 1.3ch;
+        align-items: center;
+        font-size: 2rem;
+        background: var(--color-carouselButtons);
+        color: var(--color-carouselButtonText);
+        text-shadow: 0 3px #123;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    #carouselLeftButton {
+        left: 0rem;
+    }
+
+    #carouselRightButton {
+        right: 0rem;
+    }
+
+    .carouselBottomButton {
+        display: none;
+    }
+
+    .projectContainer {
+        width: auto;
+        margin: auto;
+    }
+
+    .projectContainer p {
+        margin: 0;
+    }
+
+    .projectContainer h2 {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .projectContainer projectPreview {
+        position: relative;
+        height: 45rem;
+    }
+
+    .projectContainer section figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+
+    .projectContainer section figure figcaption h2 {
+        width: 100%;
+    }
+
+    :root {
+            --height-imageHeight: 15rem;
+    }
+
+    .projectContainer section figure img {
+        position: relative;
+        height: var(--height-imageHeight);
+        width: 100%;
+        object-fit: scale-down;
+        transition: transform .5s ease;
+    }
+
+    .projectContainer .projectDescriptionSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5rem;
+        padding-top: 1rem;
+        text-align: center;
+    }
+
+    .projectContainer .projectLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .projectContainer .projectLink {
+        margin: 0 0.35rem 0.5rem 0.35rem;
+    }
+
+    .projectLink, .inspirationLink {
+        display: block;
+        height: 1.15rem;
+        padding-right: 0.3rem;
+        padding-left: 0.3rem;
+        text-decoration: none;
+        font-size: 1.0rem;
+        color: #fff;
+        background: var(--color-primaryTitle);
+        box-shadow: 2px 2px 2px var(--color-primaryTitleShadow);
+        border: 2px solid var(--color-primaryTitleShadow);
+        border-radius: 5%;
+    }
+
+@media only screen and (min-width: 450px){
+    .projectContainer .projectLinks {
+        justify-content: center;
+    }
+
+    .projectContainer .projectLink {
+        margin: 0 2rem 1rem 2rem;
+    }
+}
+
+@media only screen and (min-width: 795px) {
+
+
+    /*==================================
+        carousel project 800+ pixels
+    ====================================*/
+        .carousel {
+            height: 875px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .carouselSideButton {
+            font-size: 2.5rem;
+            width: 1.5ch;
+            align-items: center;
+        }
+
+        #carouselLeftButton {
+            left: -1rem;
+        }
+
+        #carouselRightButton {
+            right: -1rem;
+        }
+
+        .carouselNav {
+            background: var(--color-secondaryBackground);
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0 0 0;
+        }
+
+        .carouselBottomButton {
+            display: inline-block;
+            border: 0;
+            border-radius: 50%;
+            width: 0.7rem;
+            height: 0.8rem;
+            background: var(--color-carouselButtons);
+            margin: 0 1rem 0 1rem;
+            cursor: pointer;
+        }
+
+        .currentSlide {
+            background: var(--color-primaryTitle);
+        }
+
+        .projectContainer projectPreview {
+            height: 35rem;
+        }
+
+        :root {
+            --height-imageHeight: 25rem;
+        }
+
+        .projectContainer section figure img {
+            align-self: center;
+            height: var(--height-imageHeight);
+            width: auto;
+            object-fit: cover;
+        }
+    }
+
+    /*==================================
+        special media query cases
+    ====================================*/
+
+    @media only screen and (min-width: 1285px) {
+        .inspirationImage:hover {
+            transform: scale(1.7);
+        }
+    }

@@ -1,0 +1,138 @@
+/*==================================
+            Inspiration Styles
+    ====================================*/
+
+    #inspiration{
+        display: block;
+        align-content: center;
+    }
+    
+    #myInspirationProjects {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex: 1 1 0;
+        text-align: center;
+        margin: auto;
+    }
+
+    .inspirationProject {
+        height: auto;
+        text-align: center;
+    }
+
+    .inspirationPreview figure {
+        height: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .inspirationImage {
+        max-width: 100%;
+        height: auto;
+        transition: transform .5s ease;
+    }
+
+    .inspirationImage:hover {
+        transform: scale(1.2);
+    }
+
+    .inspirationCaption {
+        align-self: center;
+        font-size: 2.25rem;
+        color: var(--color-secondaryTitle);
+        font-family: var(--ff-accentFont);
+    }
+
+    .inspirationCaption h2 {
+        margin: 0.25rem 0 0 0;
+    }
+
+    .inspirationDescription{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.75rem;
+        padding-bottom: 0rem;
+        text-align: center;
+    }
+
+    .inspirationLinks {
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: auto;
+        width: 80%;
+    }
+
+    .inspirationLinks .inspirationLink {
+        margin: 0.3rem;
+        margin-top: 0rem;
+        font-size: 0.8rem;
+        height: auto;
+        /* see the rest below at ".projectLink, .inspirationLink" */
+    }
+
+    .inspirationLinks .inspirationLink:hover{
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    /*==================================
+        Inspiration Styles - Desktop
+    ====================================*/
+@media only screen and (min-width: 795px){
+        #myInspirationProjects {
+            flex-direction: row;
+            width: 98%;
+
+        }
+
+        .inspirationProject {
+            align-content: flex-start;
+            height: auto;
+            margin: 0.2rem 1rem 0.2rem 0.2rem;
+        }
+
+        .inspirationPreview {
+            text-align: center;
+        }
+
+        .inspirationPreview figure {
+            height: auto;
+            width: 95%;
+            margin: auto;
+        }
+
+        .inspirationImage {
+            border: 1rem solid var(--color-primaryBackground);
+        }
+
+        .inspirationImage:hover,
+        .inspirationImage:focus {
+            transform: scale(2);
+        }
+
+        .inspirationCaption {
+            font-size: 1.65rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .inspirationText {
+            margin: 0.5rem 0 0.5rem 0;
+        }
+    }
+
+    /*==================================
+        special media query case
+    ====================================*/
+
+    @media only screen and (min-width: 1285px) {
+        .inspirationImage:hover {
+            transform: scale(1.7);
+        }
+    }
