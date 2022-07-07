@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Project from './Project';
 
-
 import SudokuImage from '../../images/projectImages/Sudoku.jpg';
 import JavaMVCImage from '../../images/projectImages/JavaMVC.jpg';
 import MartianTribunePreviewImage from '../../images/projectImages/MartianTribunePreview.jpg';
