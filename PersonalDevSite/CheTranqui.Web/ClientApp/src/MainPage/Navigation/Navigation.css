@@ -154,6 +154,7 @@
 
     #socialMediaDisplay {
         margin: 0 0.5rem 0 0.5rem;
+        width: 9rem;
     }
 
     .socialMediaDropdownBackground {
@@ -162,7 +163,7 @@
         left: 8px;
         height: auto;
         width: 90%;
-        max-width: 7rem;
+        max-width: 10rem;
         padding: 0.2rem 2rem 0.2rem 0;
         border: 2px solid var(--color-links);
         background-color: var(--color-secondaryBackground);
@@ -185,14 +186,15 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        font-size: 1rem;
+        font-size: 1.05rem;
         text-decoration: none;
         color: var(--color-primaryText);
         background-color: var(--color-secondaryBackground);
     }
 
     .socialMediaDropdownLink:hover, .socialMediaDropdownLink:focus {
-        width: 110%;
+        color: var(--color-links);
+        width: 108%;
         font-size: 1.1rem;
     }
 

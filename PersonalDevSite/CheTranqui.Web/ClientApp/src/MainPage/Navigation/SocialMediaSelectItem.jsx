@@ -2,6 +2,14 @@ import React, {useContext} from 'react';
 import { DarkModeContext } from '../../Context/DarkModeContext';
 import './Navigation.css';
 
+import GitHubDarkImage from "../../images/socialMediaIcons/GitHub-Mark-120px-plus.png";
+import GitHubLightImage from "../../images/socialMediaIcons/GitHub-Mark-Light-120px-plus.png";
+import YouTubeImage from "../../images/socialMediaIcons/youtube_social_icon_red.png";
+import TwitchImage from "../../images/socialMediaIcons/TwitchGlitchPurple.png";
+import TwitterBlueImage from "../../images/socialMediaIcons/2021-Twitter-logo-blue.png";
+import TwitterWhiteImage from "../../images/socialMediaIcons/2021-Twitter-logo-white.png";
+import LinkedInImage from "../../images/socialMediaIcons/LI-In-Bug.png";
+
 const SocialMediaSelectItem = (props) =>
 {
     const colorScheme = useContext(DarkModeContext);
@@ -11,42 +19,42 @@ const SocialMediaSelectItem = (props) =>
     const imageClass = "socialMediaDropdown" + props.type + "Image";
 
     let linkHref;
-    let imagePath;
+    let imageSource;
     let socialMediaButtonText;
     switch (props.type){
         case "Github":
             linkHref = "https://github.com/CheTranqui";
             if (!colorScheme.state.darkMode){
-                imagePath = "GitHub-Mark-120px-plus.png";
+                imageSource = GitHubDarkImage;
             }
             else{
-                imagePath = "GitHub-Mark-Light-120px-plus.png";
+                imageSource = GitHubLightImage;
             }
             socialMediaButtonText = "Github";
             break;
         case "YT":
             linkHref = "https://www.youtube.com/channel/UC43wbpw02ZIYkhes0O70IVg";
-            imagePath = "youtube_social_icon_red.png";
+            imageSource = YouTubeImage;
             socialMediaButtonText = "YouTube";
             break;
         case "Twitch":
             linkHref = "https://www.twitch.tv/chetranqui";
-            imagePath = "TwitchGlitchPurple.png";
+            imageSource = TwitchImage;
             socialMediaButtonText = "Twitch";
             break;
         case "Twitter":
             linkHref = "https://twitter.com/CheTranqui";
             if (!colorScheme.state.darkMode){
-                imagePath = "2021-Twitter-logo-blue.png";
+                imageSource = TwitterBlueImage;
             }
             else {
-                imagePath = "2021-Twitter-logo-white.png";
+                imageSource = TwitterWhiteImage;
             }
             socialMediaButtonText = "Twitter";
             break;
         case "LinkedIn":
             linkHref = "https://www.linkedin.com/in/chaz-peterson-1a8751142";
-            imagePath = "LI-In-Bug.png";
+            imageSource = LinkedInImage;
             socialMediaButtonText = "LinkedIn"
             break;
                     
@@ -65,7 +73,7 @@ const SocialMediaSelectItem = (props) =>
 					<img
 						className={"socialMediaDropdownImage " + linkClass}
 						id={imageClass}
-						src={require("../../images/socialMediaIcons/" + imagePath)}
+						src={imageSource}
 						alt= {props.type + " Icon"}
 					/>
 					<span className="socialMediaDropdownText " id={"socialMedia" + props.type + "Text"}>
