@@ -79,13 +79,17 @@
 
     .inspirationLinks .inspirationLink:hover{
         cursor: pointer;
-        font-size: 0.9rem;
+        transform: scale(1.2);
     }
 
     /*==================================
         Inspiration Styles - Desktop
     ====================================*/
 @media only screen and (min-width: 795px){
+        #inspiration{
+            margin-top: 3rem;
+        }
+
         #myInspirationProjects {
             flex-direction: row;
             width: 98%;

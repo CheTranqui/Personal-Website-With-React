@@ -72,28 +72,28 @@ const InspirationProject = (props) => {
 
 
     return ( proj.title.length > 1 ? 
-        <article class="inspirationProject" id="inspirationOne">
-			<section class="inspirationPreview">
+        <article className="inspirationProject" id="inspirationOne">
+			<section className="inspirationPreview">
 				<figure>
 					<img
-						class="inspirationImage"
+						className="inspirationImage"
 						src={proj.imagePath}
 						alt={proj.imageAlt}
                         id={proj.imageId}
 					/>
-					<figcaption class="inspirationCaption">
+					<figcaption className="inspirationCaption">
 						<h2>{proj.title}</h2>
 					</figcaption>
 				</figure>
 			</section>
-			<section class="inspirationDescription">
-				<p class="inspirationText">
+			<section className="inspirationDescription">
+				<p className="inspirationText">
 					{proj.description}
 				</p>
 			</section>
-			<section class="inspirationLinks">
+			<section className="inspirationLinks">
 				<a
-					class={"inspirationLink inspirationLinkTo" + proj.link1Text}
+					className={"inspirationLink inspirationLinkTo" + proj.link1Text}
 					href={proj.link1}
 					target="_blank"
 					rel="noreferrer"
@@ -103,7 +103,7 @@ const InspirationProject = (props) => {
 				</a>
                 {proj.link2Text.length > 1 ?
 				<a
-					class={"inspirationLink inspirationLinkTo" + proj.link2Text}
+						className={"inspirationLink inspirationLinkTo" + proj.link2Text}
 					href={proj.link2}
 					target="_blank"
 					rel="noreferrer"

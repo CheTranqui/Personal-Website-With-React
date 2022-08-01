@@ -6,7 +6,6 @@ import JavaMVCImage from '../../images/projectImages/JavaMVC.jpg';
 import MartianTribunePreviewImage from '../../images/projectImages/MartianTribunePreview.jpg';
 import EstateMgmtPreviewImage from '../../images/projectImages/EstateMgmtPreview.jpg';
 import JavaScriptPreviewImage from '../../images/projectImages/JavaScriptPreview.jpg';
-import myProjects from './projects.json';
 import "./projects.css";
 
 const ProjectCarousel = () => {
@@ -87,47 +86,47 @@ const ProjectCarousel = () => {
 	//parses the projectsArray into a slide object
 	const mapProjectObjectArray = (JSONSlides) => {
 		const slides = [];
-		for (let i = 0; i < JSONSlides["Projects"].length; i++) {
+		for (let i = 0; i < JSONSlides.length; i++) {
 			let slide = [];
-			slide.title = JSONSlides["Projects"][i].title;
-			slide.imageFile = JSONSlides["Projects"][i].imageFile;
-			slide.description = JSONSlides["Projects"][i].description;
-			slide.lesson = JSONSlides["Projects"][i].lesson;
+			slide.title = JSONSlides[i].title;
+			slide.imageFile = JSONSlides[i].imageFile;
+			slide.description = JSONSlides[i].description;
+			slide.lesson = JSONSlides[i].lesson;
 			//which links are present is variable - the following maps them
 			let links = [];
-			if (JSONSlides["Projects"][i].linkToGithub != null) {
+			if (JSONSlides[i].linkToGithub != null) {
 				let myLink = [];
-				myLink.link = JSONSlides["Projects"][i].linkToGithub;
+				myLink.link = JSONSlides[i].linkToGithub.link;
 				myLink.text = "Github";
 				links.push(myLink);
 			}
-			if (JSONSlides["Projects"][i].linkToYouTube != null) {
+			if (JSONSlides[i].linkToYouTube != null) {
 				let myLink = [];
-				myLink.link = JSONSlides["Projects"][i].linkToYouTube;
+				myLink.link = JSONSlides[i].linkToYouTube.link;
 				myLink.text = "YouTube";
 				links.push(myLink);
 			}
-			if (JSONSlides["Projects"][i].linkToSteam != null) {
+			if (JSONSlides[i].linkToSteam != null) {
 				let myLink = [];
-				myLink.link = JSONSlides["Projects"][i].linkToSteam;
+				myLink.link = JSONSlides[i].linkToSteam.link;
 				myLink.text = "Steam";
 				links.push(myLink);
 			}
-			if (JSONSlides["Projects"][i].linkToDownload != null) {
+			if (JSONSlides[i].linkToDownload != null) {
 				let myLink = [];
-				myLink.link = JSONSlides["Projects"][i].linkToDownload;
+				myLink.link = JSONSlides[i].linkToDownload.link;
 				myLink.text = "Download";
 				links.push(myLink);
 			}
-			if (JSONSlides["Projects"][i].linkToGithubIO != null) {
+			if (JSONSlides[i].linkToGithubIO != null) {
 				let myLink = [];
-				myLink.link = JSONSlides["Projects"][i].linkToGithubIO;
+				myLink.link = JSONSlides[i].linkToGithubIO.link;
 				myLink.text = "GithubIO";
 				links.push(myLink);
 			}
-			if (JSONSlides["Projects"][i].linkToWebsite != null) {
+			if (JSONSlides[i].linkToWebsite != null) {
 				let myLink = [];
-				myLink.link = JSONSlides["Projects"][i].linkToWebsite;
+				myLink.link = JSONSlides[i].linkToWebsite.link;
 				myLink.text = "Website";
 				links.push(myLink);
 			}
@@ -151,7 +150,11 @@ const ProjectCarousel = () => {
 
 	useEffect(() => {
 		if (projects.length < 5){
-			setProjects(mapProjectObjectArray(myProjects));
+			const fetchProjects = async () => {
+				let myProjects = await fetch("https://localhost:7213/project").then((res) => res.json());
+			setProjects(mapProjectObjectArray(await myProjects.result));
+			}
+			fetchProjects();
 		}
 		document.body.addEventListener("keyup", handleKeyUp);
 		return () =>{ document.body.removeEventListener("keyup", handleKeyUp);}
@@ -187,35 +190,55 @@ const ProjectCarousel = () => {
 							</button>
 						</li>
 					</ul>
+					<div className="carouselNav">
+						<button
+							className={
+								currentSlide === 0
+									? "carouselBottomButton currentSlide"
+									: "carouselBottomButton"
+							}
+							id="bottomButton1"
+							onClick={jumpToProject0}
+						></button>
+						<button
+							className={
+								currentSlide === 1
+									? "carouselBottomButton currentSlide"
+									: "carouselBottomButton"
+							}
+							id="bottomButton2"
+							onClick={jumpToProject1}
+						></button>
+						<button
+							className={
+								currentSlide === 2
+									? "carouselBottomButton currentSlide"
+									: "carouselBottomButton"
+							}
+							id="bottomButton3"
+							onClick={jumpToProject2}
+						></button>
+						<button
+							className={
+								currentSlide === 3
+									? "carouselBottomButton currentSlide"
+									: "carouselBottomButton"
+							}
+							id="bottomButton4"
+							onClick={jumpToProject3}
+						></button>
+						<button
+							className={
+								currentSlide === 4
+									? "carouselBottomButton currentSlide"
+									: "carouselBottomButton"
+							}
+							id="bottomButton5"
+							onClick={jumpToProject4}
+						></button>
+					</div>
 				</div>
 				{/* need a number of buttons equal to the number of slides / may want image preview? */}
-				<div className="carouselNav">
-					<button
-						className={currentSlide === 0 ? "carouselBottomButton currentSlide" : "carouselBottomButton"}
-						id="bottomButton1"
-						onClick={jumpToProject0}
-					></button>
-					<button
-						className={currentSlide === 1 ? "carouselBottomButton currentSlide" : "carouselBottomButton"}
-						id="bottomButton2"
-						onClick={jumpToProject1}
-					></button>
-					<button
-						className={currentSlide === 2 ? "carouselBottomButton currentSlide" : "carouselBottomButton"}
-						id="bottomButton3"
-						onClick={jumpToProject2}
-					></button>
-					<button
-						className={currentSlide === 3 ? "carouselBottomButton currentSlide" : "carouselBottomButton"}
-						id="bottomButton4"
-						onClick={jumpToProject3}
-					></button>
-					<button
-						className={currentSlide === 4 ? "carouselBottomButton currentSlide" : "carouselBottomButton"}
-						id="bottomButton5"
-						onClick={jumpToProject4}
-					></button>
-				</div>
 			</div>
 		</section>
 	) : (
