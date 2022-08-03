@@ -64,6 +64,8 @@ const ProjectCarousel = () => {
 				var slide = event.key - 1;
 				setCurrentSlide(slide);
 				break;
+			default:
+				break:
 		}
 	};
 
