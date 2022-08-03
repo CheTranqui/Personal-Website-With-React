@@ -1,0 +1,80 @@
+﻿/*
+    Author: Chaz Peterson
+    Alias:  CheTranqui
+*/
+
+    /*==================================
+            Primary Document Styles
+    ====================================*/
+
+:root {
+    --color-primaryBackground: #fff;
+    --color-secondaryBackground: #eee;
+    --color-primaryTitle: #38a2c2;
+    --color-primaryTitleShadow: rgba(56, 162, 194, 1);
+    --color-primaryText: #123;
+    --color-fadedText: #666;
+    --color-links: #01afa7;
+    --color-linksShadow: rgba(1, 175, 167, 0.8);
+    --color-carouselButtons: rgba(200,200,200,0.6);
+    --color-carouselButtonText: darkgray;
+    --ff-primaryFont: 'Times New Roman';
+    --ff-accentFont: 'Palatino Linotype';
+}
+
+@font-face { font-family: 'MartinHandwriting'; src: url('../Martinhand2.ttf');}
+
+    ul {
+        margin-top: 0;
+    }
+
+    header {
+        font-family: var(--ff-accentFont);
+        background-color: var(--color-secondaryBackground);
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: var(--color-primaryTitle);
+        font-family: var(--ff-accentFont);
+        margin: 1.5rem 0.5rem 1rem 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-shadow: 2px 0 var(--color-buttonBackground);
+    }
+
+    body {
+        width: 90%;
+        margin: 1rem auto 2rem auto;
+        background-color: var(--color-primaryBackground);
+        color: var(--color-primaryText);
+        font-size: 1.2rem;
+        font-family: var(--ff-primaryFont);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.05rem;
+        background-color: var(--color-secondaryBackground);
+    }
+
+    article {
+        text-align: center;
+        height: auto;
+        width: 95%;
+        margin: auto;
+        padding: 1rem 0 1rem 0;
+    }
+
+    /*==================================
+        MartianTribuneStories & footer
+    ====================================*/
+.afterThought {
+    text-align: left;
+    font-size: 1rem;
+    text-shadow: none;
+    color: var(--color-fadedText);
+}

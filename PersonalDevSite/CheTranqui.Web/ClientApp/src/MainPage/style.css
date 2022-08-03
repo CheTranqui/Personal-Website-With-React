@@ -204,21 +204,6 @@
     }
 
     /*==================================
-        MartianTribuneStories & footer
-    ====================================*/
-    .afterThought {
-        text-align: left;
-        font-size: 1rem;
-        text-shadow: none;
-        color: var(--color-fadedText);
-    }
-
-    .CSSValidator a img {
-        max-height: 1.3rem;
-        max-width: 4rem;
-    }
-
-    /*==================================
         Floating CheTranqui
     ====================================*/
     .floatingChe{
