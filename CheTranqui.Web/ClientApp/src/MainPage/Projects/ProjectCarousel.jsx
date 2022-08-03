@@ -11,6 +11,8 @@ import "./projects.css";
 const ProjectCarousel = () => {
     const [projects, setProjects] = useState([]);
 	const [currentSlide, setCurrentSlide] = useState(0);
+	const env = "prod";
+	// make env equal to 'dev' to develop locally.
 	
 	// max of 5 projects allowed at this point in time.
 	const maxProjects = 5;
@@ -154,7 +156,12 @@ const ProjectCarousel = () => {
 	useEffect(() => {
 		if (projects.length < 5){
 			const fetchProjects = async () => {
-				let myProjects = await fetch("https://localhost:7213/project").then((res) => res.json());
+				if (env == "dev") {
+					let myProjects = await fetch("http://chetranqui.azurewebsites.net/project").then((res) => res.json());
+				}
+				else {
+					let myProjects = await fetch("http://chetranqui.azurewebsites.net/project").then((res) => res.json());
+				}
 			setProjects(mapProjectObjectArray(await myProjects.result));
 			}
 			fetchProjects();
