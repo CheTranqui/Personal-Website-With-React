@@ -157,10 +157,10 @@ const ProjectCarousel = () => {
 		if (projects.length < 5){
 			const fetchProjects = async () => {
 				if (env == "dev") {
-					let myProjects = await fetch("http://chetranqui.azurewebsites.net/project").then((res) => res.json());
+					let myProjects = await fetch("https://localhost:7213/project").then((res) => res.json());
 				}
 				else {
-					let myProjects = await fetch("http://chetranqui.azurewebsites.net/project").then((res) => res.json());
+					let myProjects = await fetch("http://localhost:80/project").then((res) => res.json());
 				}
 			setProjects(mapProjectObjectArray(await myProjects.result));
 			}
