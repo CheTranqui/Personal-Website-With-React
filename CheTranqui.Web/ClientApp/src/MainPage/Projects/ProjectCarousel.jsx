@@ -65,7 +65,7 @@ const ProjectCarousel = () => {
 				setCurrentSlide(slide);
 				break;
 			default:
-				break:
+				break;
 		}
 	};
 
@@ -82,6 +82,7 @@ const ProjectCarousel = () => {
 			case "JavaScriptPreview.jpg":
 				return JavaScriptPreviewImage;
 			default:
+				break;
 		}
 	}
 
