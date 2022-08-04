@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'chetranqui'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0C855F22E803465990BD611AFF12EADF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4228328D20964C3495EDD46FA84D6B8F }}
           package: .
