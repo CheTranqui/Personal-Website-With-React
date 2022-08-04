@@ -154,13 +154,14 @@ const ProjectCarousel = () => {
 	};
 
 	useEffect(() => {
-		if (projects.length < 5){
+		if (projects.length < 5) {
+			let myProjects;
 			const fetchProjects = async () => {
 				if (env === "dev") {
-					let myProjects = await fetch("https://localhost:7213/project").then((res) => res.json());
+					myProjects = await fetch("https://localhost:7213/project").then((res) => res.json());
 				}
 				else {
-					let myProjects = await fetch("http://chetranqui.azurewebsites.net/project").then((res) => res.json());
+					myProjects = await fetch("http://chetranqui.azurewebsites.net/project").then((res) => res.json());
 				}
 			setProjects(mapProjectObjectArray(await myProjects.result));
 			}
